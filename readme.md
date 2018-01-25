@@ -17,7 +17,7 @@ Get Terraform. Get your creds. Run this:
 $ terraform init
 $ terraform apply -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=2' -var 'wallet_address=0xYOURADDRESSHERE'
 ...
-Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 4 added, 4 changed, 0 destroyed.
 
 Outputs:
 
@@ -28,6 +28,9 @@ ubuntu@ip-X-X-X-X:~$
 ```
 
 Obviously tweak as needed - `count` is how many instance of each type to spin up, `wallet_address` is your address to send coins too.
+
+It uses [dwarfpool](https://dwarfpool.com/eth) by default - it was easy - to verify your account, in the box for your wallet it will specify a hint
+for example mine said [ ..*.116 ] just look for the ip that ends the same as the hint gives you. When you specify that, you got options.
 
 ## Tear down
 
