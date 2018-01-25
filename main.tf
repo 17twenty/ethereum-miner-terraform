@@ -41,9 +41,7 @@ resource "aws_instance" "fleet-heavy" {
     Name = "fleet-heavy-${count.index}"
   }
 
-  count = "${var.count}"
-
-  #   ami             = "ami-cd0f5cb6"
+  count           = "${var.count}"
   ami             = "ami-37bb714d"
   instance_type   = "g2.8xlarge"
   security_groups = ["${aws_security_group.fleet_sg.name}"]
@@ -82,9 +80,7 @@ resource "aws_instance" "fleet-light" {
     Name = "fleet-light-${count.index}"
   }
 
-  count = "${var.count}"
-
-  #   ami             = "ami-cd0f5cb6"
+  count           = "${var.count}"
   ami             = "ami-37bb714d"
   instance_type   = "g2.2xlarge"
   security_groups = ["${aws_security_group.fleet_sg.name}"]
