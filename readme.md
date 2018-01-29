@@ -9,20 +9,23 @@ This whole project is a one stop shop to deploying an Ethereum mining setup on t
 
 You can use this as needed - ideally you'd use it to setup some GAS expenditure/cool smart apps. Don't just HODL.
 
+_Note:_ As with anything on the internet - verify this does what you want rather than getting angry about free stuff.
+You can replace ethminer if you want or just verify the checksum is the same as the official binary yourself.
+
 ## Getting Started
 
 Get Terraform. Get your creds. Run this:
 
 ```bash
 $ terraform init
-$ terraform apply -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=2' -var 'wallet_address=0xYOURADDRESSHERE'
+$ terraform apply -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=1' -var 'wallet_address=0xYOURADDRESSHERE'
 ...
 Apply complete! Resources: 4 added, 4 changed, 0 destroyed.
 
 Outputs:
 
 ip_addresses-heavy = X.X.X.X
-ip_addresses-light =
+ip_addresses-light =  X.X.X.X
 $ ssh -i provisioner/keys/aws_terraform ubuntu@X.X.X.X
 ubuntu@ip-X-X-X-X:~$
 ```
@@ -35,7 +38,7 @@ for example mine said [ ..*.116 ] just look for the ip that ends the same as the
 ## Tear down
 
 ```bash
-$ terraform destroy -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=2' -var 'wallet_address=0xYOURADDRESSHERE'
+$ terraform destroy -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=1' -var 'wallet_address=0xYOURADDRESSHERE'
 ...
 ```
 
