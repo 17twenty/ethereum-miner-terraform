@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/tmp/ethminer -G -F http://eth-us.dwarfpool.com:80/0x7ea397225ebd5c56afc26cb3bfa4fe994a60f106
+ExecStart=/tmp/ethminer -G -F http://eth-us.dwarfpool.com:80/${wallet_address}
 Restart=always
 RemainAfterExit=false
 StartLimitIntervalSec=5

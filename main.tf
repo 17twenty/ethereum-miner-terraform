@@ -36,6 +36,14 @@ resource "aws_security_group" "fleet_sg" {
   }
 }
 
+data "template_file" "init" {
+  template = "${file("./files/eth.service.tpl")}"
+
+  vars {
+    wallet_address = "${var.wallet_address}"
+  }
+}
+
 resource "aws_instance" "fleet-heavy" {
   tags {
     Name = "fleet-heavy-${count.index}"
@@ -50,7 +58,7 @@ resource "aws_instance" "fleet-heavy" {
   key_name = "${aws_key_pair.ssh_key.key_name}"
 
   provisioner "file" {
-    source      = "./files/eth.service"
+    content     = "${data.template_file.init.rendered}"
     destination = "/tmp/eth.service"
   }
 
@@ -89,7 +97,7 @@ resource "aws_instance" "fleet-light" {
   key_name = "${aws_key_pair.ssh_key.key_name}"
 
   provisioner "file" {
-    source      = "./files/eth.service"
+    content     = "${data.template_file.init.rendered}"
     destination = "/tmp/eth.service"
   }
 
