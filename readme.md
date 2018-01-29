@@ -18,7 +18,7 @@ Get Terraform. Get your creds. Run this:
 
 ```bash
 $ terraform init
-$ terraform apply -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=1' -var 'wallet_address=0xYOURADDRESSHERE'
+$ terraform apply -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=2' -var 'wallet_address=0xYOURADDRESSHERE'
 ...
 Apply complete! Resources: 4 added, 4 changed, 0 destroyed.
 
@@ -35,10 +35,15 @@ Obviously tweak as needed - `count` is how many instance of each type to spin up
 It uses [dwarfpool](https://dwarfpool.com/eth) by default - it was easy - to verify your account, in the box for your wallet it will specify a hint
 for example mine said [ ..*.116 ] just look for the ip that ends the same as the hint gives you. When you specify that, you got options.
 
+## Donations
+
+For meee? If you insist on sending me ETH, that'd be awesome - 0x7ea397225ebd5c56afc26cb3bfa4fe994a60f106
+It's the default wallet as well so feel free to run that for like, a month as an alternative payment :P
+
 ## Tear down
 
 ```bash
-$ terraform destroy -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=1' -var 'wallet_address=0xYOURADDRESSHERE'
+$ terraform destroy -var 'aws_access_key_id=XX'  -var 'aws_secret_access_key=XX' -var 'count=2' -var 'wallet_address=0xYOURADDRESSHERE'
 ...
 ```
 
